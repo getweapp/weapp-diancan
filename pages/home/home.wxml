@@ -1,0 +1,85 @@
+<view class="section">
+
+  <!-- banner -->
+  <view class="banner" >
+    <swiper indicator-dots="{{indicatorDots}}"
+      autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{imgUrls}}" wx:key="item.id">
+        <swiper-item>
+          <image src="{{item}}" mode="scaleToFill" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <!-- picker -->
+  <view class="memu">
+    <picker style="flex: 1;" bindchange="foodTypeChange" value="0" range="{{foodTypes}}">
+        <view class="memu-bt">{{foodTypes[foodTypesIndex]}}<span style="font-size:22px;">﹀</span></view>
+    </picker>
+
+    <picker style="flex: 1;" bindchange="rankTypeChange" value="0" range="{{rankTypes}}">
+        <view class="memu-bt">{{rankTypes[rankTypesIndex]}}<span style="font-size:22px;">﹀</span></view>
+    </picker>
+  </view>
+
+  <!-- 食品列表 -->
+  <view>
+    <scroll-view style="height: 100%;" scroll-y="true">
+      <view class="fooditem" wx:for="{{foodList}}" wx:key="item.id">
+
+        <view class="fooditem-l" >
+          <image mode="scaleToFill" src="{{item[0].icon}}" data-index="{{index*2}}" bindtap="imageClick"></image>
+          <view class="foodtitle">{{item[0].title}}</view>
+          <view class="fooditem-handle">
+            <span class="fooditem-jia" data-index="{{index*2}}" bindtap="addClick" >+</span>
+            <span class="fooditem-num">{{orderList[item[0].id].num ? orderList[item[0].id].num : 0}}</span>
+            <span class="fooditem-jia" data-index="{{index*2}}" bindtap="reduceClick">-</span>
+            <span class="fooditem-cost">￥{{item[0].cost}}</span>
+          </view>
+        </view>
+        <view class="fooditem-r" >
+          <image mode="scaleToFill" src="{{item[1].icon}}" data-index="{{index*2 + 1}}" bindtap="imageClick"></image>
+          <view class="foodtitle">{{item[1].title}}</view>
+          <view class="fooditem-handle">
+            <span class="fooditem-jia" data-index="{{index*2 + 1}}" bindtap="addClick">+</span>
+            <span class="fooditem-num">{{orderList[item[1].id].num ? orderList[item[1].id].num : 0}}</span>
+            <span class="fooditem-jia" data-index="{{index*2 + 1}}" bindtap="reduceClick">-</span>
+            <span class="fooditem-cost">￥{{item[1].cost}}</span>
+          </view>
+        </view>
+        
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- toast -->
+  <toast hidden="{{toastHidden}}">已加入购物车</toast>
+
+  <!-- 弹出面板 -->
+  <view class="detail" style="display:{{modalHidden ? 'none' : 'block'}};">
+    <view class="detail-top" bindtap="closeModal"></view>
+    <view class="detail-bottom">
+      <image src="{{detailFood.icon}}"></image>
+      <view class="detail-title">{{detailFood.title}}</view>
+      <view class="detail-cost">￥{{detailFood.cost}}</view>
+      <view class="detail-desc">{{detailFood.desc}}</view>
+    </view>
+    <view class="detail-buybt" data-index="{{detailIndex}}" bindtap="addCartClick">加入购物车</view>
+  </view>
+
+  <view style="height:45px;" ><view>
+
+  <!-- 提交订单 -->
+  <view class="order-view" style="display:{{modalHidden ? 'flex' : 'none'}};">
+      <view class="order-number">
+        <image mode="scaleToFill" src="/res/img/cart.png"></image>
+        <span class="order-num-txt">{{orderNum}}</span>
+        <span>￥{{orderCost}}</span>
+      </view>
+      <view class="order-bt" bindtap="sublimitClick">提交订单</view>
+  <view>
+
+</view>
+
+

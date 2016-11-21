@@ -1,0 +1,13 @@
+{
+  "pages":[
+    "pages/home/home",
+    "pages/order/order"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "backgroundColor": "#fbf9fe",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "餐厅",
+    "navigationBarTextStyle":"white"
+  }
+}

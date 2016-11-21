@@ -1,0 +1,172 @@
+
+/* banner image */
+.slide-image{
+    width: 96%;
+    height: 250px;
+    margin: 0 auto;
+    margin-left: 2%;
+}
+
+/* 下拉菜单 */
+.memu{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+}
+.memu-bt{
+    display: block;
+    flex: 1;
+    padding: 10px 0px;
+}
+.memu-bt span{
+    position: relative;
+    top: 7px;
+    left: 5px;
+}
+
+/* 食品列表 */
+.fooditem{
+    flex-direction: row;
+    display: flex;
+    margin: 15px 0px;
+}
+.fooditem-l,.fooditem-r{
+    flex: 1;
+}
+.fooditem-l{
+    margin-left: 5%;
+}
+.fooditem-r{
+    margin-left: 0%;
+}
+.fooditem image{
+    width: 90%; 
+    height: 100px;
+}
+.foodtitle{
+    font-size: 14px;
+    margin-top: 10px;
+}
+.fooditem-handle{
+    margin-top: 12px;
+}
+.fooditem-jia{
+    font-size: 20px;
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    border: 1px solid #ff2d2d;
+    color: #ff2d2d;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 20px;
+}
+.fooditem-num{
+    font-size: 14px;
+    display: inline-block;
+    color: #ff2d2d;
+    width: 28px;
+    text-align: center;
+    margin-top: -3px;
+}
+.fooditem-cost{
+    font-size: 14px;
+    color: #ff2d2d;
+    width: 40px;
+    float: right;
+    margin-top: 5px;
+}
+
+/* 提交订单 */
+.order-view{
+    position: fixed;
+    display: flex;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 45px;
+}
+.order-number{
+    width: 50%;
+    background-color: #eee;
+    color: #ff2d2d;
+    text-align: center;
+    line-height: 45px;
+}
+.order-number image{
+    position: absolute;
+    width: 20px; 
+    height: 20px;
+    left: 19px;
+    top: 13px;
+}
+.order-num-txt{
+    position: absolute;
+    width: 20px; 
+    height: 20px;
+    display: block;
+    font-size: 14px;
+    border-radius: 10px;
+    background-color: #ff2d2d;
+    color: #fff;
+    line-height: 22px;
+    left: 35px;
+    top: 5px;
+}
+.order-bt{
+    width: 50%;
+    background-color: #09bb07;
+    color: #fff;
+    text-align: center;
+    line-height: 45px;
+}
+
+/* 食品详情-弹出面板 */
+.detail{
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+}
+.detail-top{
+    height: 16%;
+    background-color: #000;
+    opacity: 0.75;
+}
+.detail-bottom{
+    height: 84%;
+    background-color: #fff;
+}
+.detail-bottom image{
+    width: 100%;
+}
+.detail-title{
+    font-size: 14px;
+    margin: 20px 0px 0px 20px;
+}
+.detail-cost{
+    font-size: 14px;
+    color: #ff2d2d;
+    margin: 10px 0px 20px 20px;
+}
+.detail-desc{
+    font-size: 14px;
+    color: #aaa;
+    padding: 20px 0px 0px 20px;
+    border-top: 1px solid #999;
+}
+.detail-buybt{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 50px;
+    background-color: #09bb07;
+    line-height: 50px;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+}
