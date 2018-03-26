@@ -68,7 +68,7 @@
     <view class="detail-buybt" data-index="{{detailIndex}}" bindtap="addCartClick">加入购物车</view>
   </view>
 
-  <view style="height:45px;" ><view>
+  <view style="height:45px;" ></view>
 
   <!-- 提交订单 -->
   <view class="order-view" style="display:{{modalHidden ? 'flex' : 'none'}};">
@@ -78,7 +78,7 @@
         <span>￥{{orderCost}}</span>
       </view>
       <view class="order-bt" bindtap="sublimitClick">提交订单</view>
-  <view>
+  </view>
 
 </view>
 
